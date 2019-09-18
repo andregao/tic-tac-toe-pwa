@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'tic-tac-tow-pwa'`, () => {
+  it(`should have as title 'tic-tac-toe-pwa'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('tic-tac-tow-pwa');
+    expect(app.title).toEqual('tic-tac-toe-pwa');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('tic-tac-tow-pwa app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('tic-tac-toe-pwa app is running!');
   });
 });

@@ -1,14 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-square',
-  templateUrl: './square.component.html',
-  styleUrls: ['./square.component.scss']
+  template: `
+    <button nbButton outline="false" *ngIf="!value">{{ value }}</button>
+    <button nbButton hero status="success" *ngIf="value === 'X'">
+      {{ value }}
+    </button>
+    <button nbButton hero status="danger" *ngIf="value === 'O'">
+      {{ value }}
+    </button>
+  `,
+  styles: [
+      `
+      button {
+        color: black;
+        font-size: 3em;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    `
+  ]
 })
-export class SquareComponent   {
+export class SquareComponent {
+  @Input() value: 'X' | 'O';
 
-  constructor() { }
-
-
-
+  constructor() {
+  }
 }
